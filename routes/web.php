@@ -7,5 +7,5 @@ Route::get('/', function () {
     return view('components.layouts.app');
 });
 
-Route::get('/posts', ShowPosts::class);
-Route::get('/post/create', CreatePost::class);
+Route::get('/', ShowPosts::class)->name('posts');
+Route::get('/post/create', CreatePost::class)->name('post.create');
