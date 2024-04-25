@@ -8,10 +8,9 @@
         @vite('resources/js/app.js')
         @vite('resources/css/app.css')
     </head>
-    <body>
+    <body class="flex flex-col min-h-screen">
         <livewire:header />
-        {{-- <aside><h3>That's my aside</h3></aside> --}}
-        <div class="container">
+        <div class="container mx-auto px-4 flex-grow">
             {{ $slot ?? '' }}
         </div>
         <livewire:footer />
