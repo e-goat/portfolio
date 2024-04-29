@@ -2,7 +2,7 @@
     <div class="pt-6 space-y-4 max-xl">
         <h1 class="text-2xl">{{ $post->title }}</h1>
         <blockquote>
-            <p class="text-lg font-medium line-clamp-1">
+            <p class="text-lg font-medium">
                 {{ $post->content }}
             </p>
         </blockquote>
@@ -14,9 +14,6 @@
                 <div class="text-slate-700">
                     {{$post->created_at}}
                 </div>
-            </div>
-            <div>
-                <a href="{{ route('post.show', $post->slug) }}" class="text-grey-500" wire:navigate><em>Read more</em></a>
             </div>
         </div>
     </div>

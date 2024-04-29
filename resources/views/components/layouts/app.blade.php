@@ -10,7 +10,7 @@
     </head>
     <body class="flex flex-col min-h-screen">
         <livewire:header />
-        <div class="container mx-auto px-4 flex-grow">
+        <div class="container mx-auto p-4 flex-grow">
             {{ $slot ?? '' }}
         </div>
         <livewire:footer />

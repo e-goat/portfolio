@@ -36,4 +36,9 @@ class BaseRepository implements RepositoryInterface
     {
         return $this->model->findOrFail($id);
     }
+
+    public function findBySlug($slug)
+    {
+        return $this->model->where('slug', $slug)->first();
+    }
 }
