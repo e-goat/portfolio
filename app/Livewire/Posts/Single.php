@@ -12,7 +12,7 @@ class Single extends Component
     public function mount(Request $request, PostRepository $postRepository)
     {
         $slug = $request->slug;
-        $post = $postRepository->getBySlug($slug);
+        $post = $postRepository->findBySlug($slug);
         $this->post = $post;
     }
 

@@ -16,6 +16,11 @@ class BaseRepository implements RepositoryInterface
         return $this->model->all();
     }
 
+    public function paginated($perPage)
+    {
+        return $this->model->paginate($perPage);
+    }
+
     public function create(array $data)
     {
         return $this->model->create($data);
