@@ -20,7 +20,7 @@ class PostFactory extends Factory
             'title' => $this->faker->sentence,
             'content' => $this->faker->paragraph,
             'slug' => $this->faker->slug,
-            'user_id' => \App\Models\User::factory(),
+            'user_id' => \App\Models\User::all()->random()->id,
         ];
     }
 }

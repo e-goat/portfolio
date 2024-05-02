@@ -1,3 +1,4 @@
+
 document.addEventListener('livewire:navigated', () => { 
   const themeToggler = document.querySelector('#theme-toggle')
 
