@@ -1,2 +1,2 @@
-# portfolio
-Portfolio build with Laravel Livewire
+# Portfolio
+Бuild with Livewire
