@@ -7,9 +7,11 @@ use App\Repositories\PostRepository;
 
 class ShowPosts extends Component
 {
-    public function __construct()
+    private $postRepository;
+
+    public function mount(PostRepository $postRepository)
     {
-        $this->postRepository = new PostRepository();
+        $this->postRepository = $postRepository;
     }
 
     public function render()

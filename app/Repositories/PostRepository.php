@@ -16,4 +16,8 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
         $this->update(['liked' => $post->liked + 1], $id);
     }
 
+    public function getBySlug($slug)
+    {
+        return $this->model->where('slug', $slug)->first();
+    }
 }
