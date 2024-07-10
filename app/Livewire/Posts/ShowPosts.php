@@ -18,6 +18,6 @@ class ShowPosts extends Component
             ->layout('components.layouts.app')
             ->with([
                 'posts' => $this->postRepository->all()
-        ]);
+            ]);
     }
 }

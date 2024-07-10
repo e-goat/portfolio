@@ -9,6 +9,11 @@
         @vite('resources/css/app.css')
     </head>
     <body>
-        {{ $slot ?? '' }}
+        <livewire:header />
+        {{-- <aside><h3>That's my aside</h3></aside> --}}
+        <div class="container">
+            {{ $slot ?? '' }}
+        </div>
+        <livewire:footer />
     </body>
 </html>
