@@ -2,9 +2,7 @@
     $currentYear = date('Y');
 ?>
 
-<footer class="bg-zinc-50 text-center dark:bg-gray-800 lg:text-left">
-    <div class="bg-black/5 p-4 text-center text-surface dark:text-white">
-        © {{$currentYear}} Copyright:
-        <p>Martin Duchev</p>
-    </div>
+<footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
+    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© {{$currentYear}} My lovely blog journey...</span>
 </footer>
