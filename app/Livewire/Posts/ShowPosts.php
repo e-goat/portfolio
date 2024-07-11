@@ -20,7 +20,7 @@ class ShowPosts extends Component
         return view('livewire.posts.show-posts')
             ->layout('components.layouts.app')
             ->with([
-                'posts' => $this->postRepository->paginated(10)
+                'posts' => $this->postRepository->paginated(16)
             ]);
     }
 }

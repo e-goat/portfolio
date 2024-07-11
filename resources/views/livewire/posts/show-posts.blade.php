@@ -6,6 +6,6 @@
         @endforeach
     </div>
     <div class="p-4">
-        {{ $posts->links() }}
+        {{ $posts->links('livewire.paginator') }}
     </div>
 </div>
