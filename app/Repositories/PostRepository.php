@@ -7,7 +7,7 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
 {
     public function __construct()
     {
-        parent::__construct(new Post());
+        parent::__construct(Post::class);
     }
 
     public function like($id)
