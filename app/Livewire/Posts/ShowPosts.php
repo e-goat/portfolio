@@ -3,15 +3,16 @@
 namespace App\Livewire\Posts;
 
 use Livewire\Component;
-use App\Repositories\PostRepository;
+use App\Interfaces\PostRepositoryInterface;
+use Livewire\WithPagination;
 
 class ShowPosts extends Component
 {
-    private $postRepository;
+    use WithPagination;
 
-    public function mount(PostRepository $postRepository)
+    public function __construct()
     {
-        $this->postRepository = $postRepository;
+        $this->postRepository = app(PostRepositoryInterface::class);
     }
 
     public function render()
@@ -19,7 +20,7 @@ class ShowPosts extends Component
         return view('livewire.posts.show-posts')
             ->layout('components.layouts.app')
             ->with([
-                'posts' => $this->postRepository->all()
+                'posts' => $this->postRepository->paginated(10)
             ]);
     }
 }

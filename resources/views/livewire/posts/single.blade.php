@@ -1,6 +1,9 @@
 <article class="bg-slate-100 rounded-xl p-8">
-    <div class="pt-6 space-y-4 max-xl">
-        <h1 class="text-2xl">{{ $post->title }}</h1>
+    <div class="space-y-4 max-xl flex flex-col justify-between">
+        <div>
+            <a href="{{ route('home') }}" class="text-sky-500 hover:text-sky-800" wire:navigate>Back</a>
+            <h1 class="text-2xl">{{ $post->title }}</h1>
+        </div>
         <blockquote>
             <p class="text-lg font-medium">
                 {{ $post->content }}

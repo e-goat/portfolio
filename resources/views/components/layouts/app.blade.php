@@ -6,7 +6,6 @@
 
         <title>{{ $title ?? 'Page Title' }}</title>
         @vite('resources/js/app.js')
-        @vite('resources/css/app.css')
     </head>
     <body class="flex flex-col min-h-screen">
         <livewire:header />
