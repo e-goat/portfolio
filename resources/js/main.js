@@ -1,5 +1,6 @@
 
-document.addEventListener('livewire:navigated', () => { 
+document.addEventListener('livewire:navigated', () => {
+  "use strict"
   const themeToggler = document.querySelector('#theme-toggle')
 
   // On page load or when changing themes, best to add inline in `head` to avoid FOUC
