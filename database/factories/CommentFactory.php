@@ -32,7 +32,7 @@ class CommentFactory extends Factory
             },
             'content'     => $this->faker->paragraph,
             'approved'    => $this->faker->boolean(80),
-            'approved_at' => $this->faker->dateTimeThisYear,
+            'approved_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
             'approved_by' => function() {
                 return User::count() > 0 ? User::all()->random()->id: function() {
                     User::factory(100);

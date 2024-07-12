@@ -15,6 +15,7 @@
         "laravel/telescope": "^5.0",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.0",
+        "michaelachrisco/readonly": "^1.0",
         "spatie/filament-markdown-editor": "^2.0"
     },
     "require-dev": {

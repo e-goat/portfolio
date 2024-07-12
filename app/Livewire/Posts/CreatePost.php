@@ -13,6 +13,6 @@ class CreatePost extends Component
         return view('livewire.posts.create-post')->with([
             'author' => 'John Doe',
         ])
-        ->layout('components.layouts.app');
+        ->layout('layouts.app');
     }
 }
