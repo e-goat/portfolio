@@ -20,5 +20,5 @@ Installation Guid (with Docker)\
 Requisites:\
     * PHP 8.2 or higher\
     * MySQL\
-    * Composer: https://getcomposer.org/download/\
-    * Docker
+    * [Composer](https://getcomposer.org/download)\
+    * Docker\
