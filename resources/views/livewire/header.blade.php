@@ -1,7 +1,6 @@
 <header class="sticky top-0 mb-4">
     <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-
             <div class="left-side-nav-wrapper flex gap-2">
               <button data-collapse-toggle="navbar-hamburger" type="button" class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-hamburger" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
@@ -9,7 +8,6 @@
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
                 </svg>
               </button>
-
               <a href="{{route('home')}}" class="flex items-center" wire:navigate>
                   <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Blog</span>
               </a>
@@ -30,18 +28,15 @@
         </div>
     </nav>
     <div class="hidden w-full" id="navbar-hamburger">
-      <ul class="flex flex-col font-medium bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+      <ul class="flex flex-col font-medium bg-gray-50 dark:bg-gray-800 dark:border-gray-700 container mx-auto max-w-screen-xl px-4 lg:px-6 py-2.5">
         <li>
-          <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded dark:bg-blue-600" aria-current="page">Home</a>
+          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 text-center dark:hover:bg-gray-700 dark:hover:text-white">Services</a>
         </li>
         <li>
-          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Services</a>
+          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 text-center md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white">Pricing</a>
         </li>
         <li>
-          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white">Pricing</a>
-        </li>
-        <li>
-          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Contact</a>
+          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 text-center dark:hover:bg-gray-700 dark:hover:text-white">Contact</a>
         </li>
       </ul>
     </div>
