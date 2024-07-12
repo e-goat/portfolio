@@ -1,5 +1,4 @@
-# Simple blog build with Laravel/Livewire\
-\
+# Simple blog build with Laravel/Livewire
 Installation guide:\
     * `composer install`\
     * `npm install`\
