@@ -25,7 +25,6 @@ class Single extends Component
 
     public function render()
     {
-        return view('livewire.posts.single')
-            ->layout('components.layouts.app');
+        return view('livewire.posts.single');
     }
 }

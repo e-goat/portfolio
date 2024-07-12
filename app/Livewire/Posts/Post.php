@@ -12,6 +12,6 @@ class Post extends Component
     public function render()
     {
         return view('livewire.posts.post')
-            ->layout('components.layouts.app');
+            ->layout('guest');
     }
 }
