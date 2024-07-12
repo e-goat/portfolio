@@ -27,4 +27,14 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function getApprovedComments()
+    {
+        return $this->comments()->where('approved', true)->get();
+    }
 }

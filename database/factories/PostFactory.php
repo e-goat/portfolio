@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
  */
 class PostFactory extends Factory
 {
@@ -16,9 +16,18 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
+        $paragraphsCount = range(0, 5);
+        $title      = $this->faker->realText(50);
+        $content    = '';
+
+        foreach ($paragraphsCount as $idx) {
+            $paragraph = $this->faker->realText(1000);
+            $content .= "<p>{$paragraph}</p>";
+        }
+
         return [
-            'title' => $this->faker->sentence,
-            'content' => $this->faker->paragraph,
+            'title' => $title,
+            'content' => $content,
             'slug' => $this->faker->slug,
             'user_id' => \App\Models\User::all()->random()->id,
         ];

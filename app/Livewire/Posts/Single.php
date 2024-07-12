@@ -10,6 +10,7 @@ class Single extends Component
 {
     public $post;
     public $image = 'https://picsum.photos/200/300';
+    public $comments = [];
 
     public function __construct()
     {
@@ -21,6 +22,14 @@ class Single extends Component
         $slug = $request->slug;
         $post = $this->postRepository->findBySlug($slug);
         $this->post = $post;
+        $this->comments = $this->postRepository->getComments($post->id);
+    }
+
+    public function addComment(Request $request)
+    {
+        dd($request->content, $this->post->slug);
+        $url = '/post/' . $this->post->slug;
+        $this->redirect($url);
     }
 
     public function render()

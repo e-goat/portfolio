@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('post_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->text('content');
+            $table->boolean('approved')->default(false);
+            $table->timestamp('approved_at')->nullable();
+            $table->foreignId('approved_by')->nullable()->constrained('users');
+            $table->unsignedInteger('depth')->default(0);
+            $table->unsignedInteger('likes_count')->default(0);
+            $table->unsignedInteger('dislikes_count')->default(0);
+            $table->index(['post_id', 'approved', 'user_id']);
             $table->timestamps();
         });
     }

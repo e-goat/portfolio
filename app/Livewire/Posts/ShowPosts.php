@@ -19,8 +19,9 @@ class ShowPosts extends Component
     public function render()
     {
         return view('livewire.posts.show-posts')
+            ->layout('components.layouts.app')
             ->with([
-                'posts' => $this->postRepository->paginated(12)
+                'posts' => $this->postRepository->paginated(12),
             ]);
     }
 }
