@@ -25,13 +25,6 @@ class Single extends Component
         $this->comments = $this->postRepository->getComments($post->id);
     }
 
-    public function addComment(Request $request)
-    {
-        dd($request->content, $this->post->slug);
-        $url = '/post/' . $this->post->slug;
-        $this->redirect($url);
-    }
-
     public function render()
     {
         return view('livewire.posts.single');

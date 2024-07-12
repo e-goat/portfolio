@@ -5,8 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
-use App\Models\Post;
+use App\Models\{User, Post, Reply};
 
 class Comment extends Model
 {
@@ -58,5 +57,10 @@ class Comment extends Model
     {
         $this->fill($data);
         $this->save();
+    }
+
+    public function replies()
+    {
+        return $this->hasMany(Reply::class)->orderBy('created_at', 'desc');
     }
 }

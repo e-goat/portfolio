@@ -3,24 +3,25 @@
 namespace App\Livewire\Forms;
 
 use Filament\Forms\Components\Hidden;
+use Livewire\Component;
 use Filament\Forms\Components\TextArea;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
-use Filament\Forms\Form;
-use Livewire\Component;
-use Illuminate\View\View;
-use App\Models\Comment as CommentModel;
 use Laravel\Jetstream\InteractsWithBanner;
+use Filament\Forms\Form;
+use App\Models\Comment as CommentModel;
+use App\Models\Reply as ReplyModel;
 
-class Comment extends Component implements HasForms
+class ReplyComment extends Component implements HasForms
 {
+
     use InteractsWithForms;
     use InteractsWithBanner;
 
     public ?array $data = [];
-    public $postID = null;
+    public $comment;
 
-    public function mount(): void
+    public function mount(CommentModel $comment): void
     {
         $this->form->fill();
     }
@@ -35,9 +36,8 @@ class Comment extends Component implements HasForms
                 ->maxLength(250)
                 ->required()
                 ->markAsRequired(false),
-
-                Hidden::make('post_id')
-                    ->default($this->postID),
+                Hidden::make('comment_id')
+                    ->default($this->comment->id),
                 Hidden::make('user_id')
                     ->default(auth()->id()),
 
@@ -54,25 +54,13 @@ class Comment extends Component implements HasForms
 
     public function create(): void
     {
-        if ( ! auth()->check()) {
-            return;
-        }
-
-        if ( is_null($this->postID)) {
-            return;
-        }
-
         $formData = $this->form->getState();
-        $comment = new CommentModel();
-        $comment->store($formData);
-
-        $this->banner(__('Your comment will be visible after it is approved by our moderators. Please be patient. (For testing purposes, we have approved your comment.)'));
-        $this->form->fill();
-        $this->dispatch('commentAdded', $this->postID);
+        ReplyModel::create($formData);
+        $this->dispatch('commentReplyAdded', $this->comment->post->id);
     }
 
-    public function render(): View
+    public function render()
     {
-        return view('livewire.forms.comment');
+        return view('livewire.forms.reply-comment');
     }
 }

@@ -7,7 +7,12 @@ use Livewire\Component;
 class Post extends Component
 {
     public $post;
-    public $image = 'https://picsum.photos/id/1/400/250';
+    public $image;
+
+    public function mount()
+    {
+        $this->image = 'https://picsum.photos/id/' . rand(1, 100) . '/400/250';
+    }
 
     public function render()
     {

@@ -30,11 +30,11 @@ class Post extends Model
 
     public function comments()
     {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class)->orderBy('created_at', 'desc');
     }
 
     public function getApprovedComments()
     {
-        return $this->comments()->where('approved', true)->get();
+        return $this->comments()->where('approved', true)->orderBy('created_at', 'desc')->get();
     }
 }

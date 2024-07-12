@@ -35,29 +35,21 @@
     @endif
 
     @if ($post->getApprovedComments()->count() > 0)
-        <section class="mt-8">
-            <h2 class="text-xl font-bold text-gray-900 underline text-start">{{__("Comments")}} ({{$post->getApprovedComments()->count()}})</h2>
-            <div class="mt-4 mb-4 border rounded max-h-80 overflow-auto">
-                @foreach ($post->getApprovedComments() as $comment)
-                    <div class="flex flex-col gap-2 p-6">
-                        <div class="flex items gap-2">
-                            <img class="w-10 h-10 rounded-full ring-2 ring-gray-300 p-1" src="{{$comment->user->profile_photo_url}}" alt="">
-                            <div class="font-light">
-                                <div>{{$comment->user->name}}</div>
-                                <div class="text-sm text-gray-500">{{__("Posted at")}} {{$comment->created_at}}</div>
-                            </div>
-                        </div>
-                        <p class="text-md text-gray-900">
-                            {{$comment->content}}
-                        </p>
-                    </div>
-                @endforeach
-            </div>
-        </section>
+        <livewire:posts.comments :$post :key="$post->id"/>
     @endif
+
+    {{-- Scroll to top --}}
     @script
         <script>
-            $wire.on('comment-added', () => {
+            $wire.on('commentAdded', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            $wire.on('commentDeleted', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            $wire.on('commentEdited', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         </script>
