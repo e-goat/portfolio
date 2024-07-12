@@ -4,11 +4,12 @@ namespace App\Livewire\Posts;
 
 use Livewire\Component;
 use App\Interfaces\PostRepositoryInterface;
+use Livewire\WithoutUrlPagination;
 use Livewire\WithPagination;
 
 class ShowPosts extends Component
 {
-    use WithPagination;
+    use WithPagination, WithoutUrlPagination;
 
     public function __construct()
     {
@@ -20,7 +21,7 @@ class ShowPosts extends Component
         return view('livewire.posts.show-posts')
             ->layout('components.layouts.app')
             ->with([
-                'posts' => $this->postRepository->paginated(16)
+                'posts' => $this->postRepository->paginated(12)
             ]);
     }
 }
