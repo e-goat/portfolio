@@ -7,7 +7,7 @@ Installation guide:\
     * `php artisan db:seed`\
     * `php artisan serve`
 
-Installation Guid (with Docker)\
+Installation Guide (with Docker)\
     * `composer install`\
     * `alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'`\
     * `sail up`\
