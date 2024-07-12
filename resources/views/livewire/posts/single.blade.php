@@ -34,9 +34,9 @@
         <livewire:forms.comment :$postID/>
     @endif
 
-    @if ($post->getApprovedComments()->count() > 0)
+    {{-- @if ($post->getApprovedComments()->count() > 0) --}}
         <livewire:posts.comments :$post :key="$post->id"/>
-    @endif
+    {{-- @endif --}}
 
     {{-- Scroll to top --}}
     @script
