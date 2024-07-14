@@ -18,7 +18,7 @@ Installation Guide (with Docker)\
     * App should run at `http://localhost/:80`
 
 Read-only API routes:
-    * /api/posts
+    * /api/posts\
     * /api/posts/`$slug`
 
 Requisites:\
