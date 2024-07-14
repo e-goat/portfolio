@@ -2,11 +2,14 @@
     @if ($posts->isEmpty())
         <div class="flex justify-center items-center h-96">
             <div class="text-center">
-                <h1 class="text-4xl font-bold text-gray-800">No posts found</h1>
-                <p class="text-gray-500">There are no posts to show at the moment</p>
+                <h1 class="text-4xl font-bold text-gray-800">{{__('No posts found')}}</h1>
+                <p class="text-gray-500">{{__('There are no posts to show at the moment, please run your seeders - ')}}
+                    <code class="text-gray-500">{{__('php artisan db:seed')}}</code>
+                </p>
+
                 <button class="border rounded p-2 hover:bg-slate-100 mt-5">
                     <div class="contentWrap flex justify-center items-center">
-                        <p class="text-gray-500">Create a new post</p>
+                        <p class="text-gray-500">{{__('Create a new post')}}</p>
                         <div class="icon">
                             <svg class="w-10 h-10 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>

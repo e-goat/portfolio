@@ -24,16 +24,11 @@ class ReplyFactory extends Factory
                     return Comment::all()->random()->id;
                 };
             },
-            'user_id'   => function() {
-                return User::count() > 0 ? User::all()->random()->id: function() {
-                    User::factory(100);
-                    return User::all()->random()->id;
-                };
-            },
+            'user_id'   => User::all()->random()->id,
             'content' => $this->faker->text,
-            'approved' => false,
-            'approved_at' => null,
-            'approved_by' => null,
+            'approved' => true,
+            'approved_at' => now(),
+            'approved_by' => User::all()->random()->id,
         ];
     }
 }
