@@ -17,9 +17,9 @@ Installation Guide (with Docker)\
     * Then `npm run build`\
     * App should run at `http://localhost/:80`
 
-Read-only API routes:
-    * /api/posts\
-    * /api/posts/`$slug`
+Read-only API routes:\
+    - /api/posts\
+    - /api/posts/`$slug`
 
 Requisites:\
     * PHP 8.2 or higher\
