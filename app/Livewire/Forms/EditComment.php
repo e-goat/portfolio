@@ -3,7 +3,7 @@
 namespace App\Livewire\Forms;
 
 use Livewire\Component;
-use Filament\Forms\Components\TextArea;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Laravel\Jetstream\InteractsWithBanner;
@@ -28,7 +28,7 @@ class EditComment extends Component implements HasForms
     {
         return $form
             ->schema([
-                TextArea::make('content')
+                Textarea::make('content')
                 ->label('')
                 ->default($this->comment->content)
                 ->minLength(3)

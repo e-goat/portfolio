@@ -11,6 +11,34 @@ Livewire.hook('commit', ({ component, commit, respond, succeed, fail }) => {
   })
 })
 
+let attrs = [
+    'snapshot',
+    'effects',
+    // 'id'
+];
+
+function snapKill() {
+    document.querySelectorAll('article').forEach(function(element) {
+        for (let i in attrs) {
+            if (element.getAttribute(`wire:${attrs[i]}`) !== null) {
+                element.removeAttribute(`wire:${attrs[i]}`);
+            }
+        }
+    });
+
+    document.querySelectorAll('div').forEach(function(element) {
+        for (let i in attrs) {
+            if (element.getAttribute(`wire:${attrs[i]}`) !== null) {
+                element.removeAttribute(`wire:${attrs[i]}`);
+            }
+        }
+    });
+}
+
+window.addEventListener('load',(ev) =>{
+       snapKill();
+});
+
 document.addEventListener('livewire:navigated', () => {
   initFlowbite();
 })

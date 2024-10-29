@@ -3,7 +3,7 @@
 namespace App\Livewire\Forms;
 
 use Filament\Forms\Components\Hidden;
-use Filament\Forms\Components\TextArea;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
@@ -29,7 +29,7 @@ class Comment extends Component implements HasForms
     {
         return $form
             ->schema([
-                TextArea::make('content')
+                Textarea::make('content')
                 ->label('')
                 ->minLength(3)
                 ->maxLength(250)

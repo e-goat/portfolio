@@ -156,4 +156,7 @@ return [
     */
 
     'pagination_theme' => 'tailwind',
+
+    'snapshot' => false,
+
 ];

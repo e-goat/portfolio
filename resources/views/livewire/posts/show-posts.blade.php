@@ -27,7 +27,7 @@
             <livewire:posts.post :$post :key="$post->id" :$slug>
         @endforeach
     </div>
-    <div class="p-4">
+    <div class="py-4">
         {{ $posts->withQueryString()->links() }}
     </div>
 </div>

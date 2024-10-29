@@ -46,7 +46,7 @@
 
             <div class="flex items-center justify-start mt-4">
                 <div class="flex items-start justify-between flex-col">
-                        <span>{{ __('New to RubberDuck blog?') }}</span>
+                        <span>{{ __('New to ') . config('app.name') . __(' blog') }}?</span>
                         <a href="{{ route('register') }}" class="hover:text-gray-600 font-bold">
                             {{ __('Create account') }}
                         </a>

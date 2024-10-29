@@ -1,9 +1,9 @@
 <div class="h-full w-full flex flex-col bg-transperant">
     <article>
         <div class="space-y-4 max-xl flex flex-col justify-between">
-            <div class="flex flex-col gap-4">
-                    <a href="{{ route('home') }}" class="text-sky-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 p-3 w-max" wire:navigate>
-                        <svg class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
+            <div class="flex gap-4 py-4">
+                    <a href="{{ route('home') }}" class="text-sky-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 w-max flex items-center" wire:navigate>
+                        <svg class="w-10 h-10 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 1 1.3 6.326a.91.91 0 0 0 0 1.348L7 13"/>
                         </svg>
                     </a>
